@@ -20,7 +20,13 @@
 >
   <#assign cardHeader>
     <@logo.kw>
-      ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
+      <div class="bg-[linear-gradient(294.36deg,_#020507_-98.1%,_#0D192F_-25.46%,_#315DE7_92.95%)] pt-10 pb-[34px] pl-[45px] pr-[48px] flex items-center gap-10 relative rounded-t-[14px] overflow-hidden">
+        <@iconLogo.kw />
+        <div class="text-[23px] font-bold text-white">
+          ${kcSanitize(msg("loginTitleHtml", (realm.displayNameHtml!"")))?no_esc}
+        </div>
+        <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 h-[73px] w-[1px] bg-[#78D0FF]"></div>
+      </div>
     </@logo.kw>
     <#if !(auth?has_content && auth.showUsername() && !auth.showResetCredentials())>
       <@heading.kw>
